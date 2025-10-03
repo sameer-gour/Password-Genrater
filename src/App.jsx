@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 function App() {
-  const [length, setlength] = useState();
+  const [length, setlength] = useState(0);
   const [isnum, setIsNum] = useState(false);
   const [islatter, setIsLatter] = useState(false);
   const [password, setPassword] = useState();
+  
+
 
   const passwordRef = useRef(null);
 
@@ -52,7 +54,7 @@ function App() {
     className="bg-blue-500 py-2 px-4 uppercase font-semibold rounded-r-lg text-white 
                transform transition duration-200 hover:bg-blue-700 active:scale-95 cursor-pointer"
   >
-    Copy
+    copy
   </label>
 </div>
 
@@ -65,8 +67,9 @@ function App() {
                   setlength(e.target.value);
                 }}
                 type="range"
-                min={6}
-                max={20}
+                min={3}
+                max={30}
+                  defaultValue="0"  
               ></input>
 
               <label className=" pr-3 ">{length}</label>
